@@ -21,15 +21,38 @@ for (var i=0; i<streamUsers.length; i++) {
   var x = JSON.parse(getLogo.response);
   var logo = x.logo;
   var user = x.display_name;
+  var url = x.url;
+  var game = x.game;
+  var followers = x.followers;
 
   // If the user is offline they will appear offline with their logo
   if (status === "null") {
-    document.write("<div class='offline'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>Offline</p></div>");
+    document.write("<a href='" + url + "' target='_blank'><div class='offline'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>Followers: " + followers + "</p><p>Offline</p></div>");
   } else {
       // Display username, logo and stream name
       function writeIt() {
-        document.write("<div class='online'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>" + j.stream.game + "</p></div>");
+        document.write("<a href='" + url + "' target='_blank'><div class='online'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>Followers: " + followers + "</p><p>" + game + "</p></div>");
   }
     writeIt();
   }
 }
+
+
+$("#showOffline").click(function(){
+  $(".online").show();
+  $(".offline").show();
+
+  $(".online").hide();
+});
+
+$("#showOnline").click(function(){
+  $(".online").show();
+  $(".offline").show();
+
+  $(".offline").hide();
+});
+
+$("#showAll").click(function(){
+  $(".online").show();
+  $(".offline").show();
+});
