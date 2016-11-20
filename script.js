@@ -1,5 +1,5 @@
 // Array of Twitch Streamers
-var streamUsers = ["ESL_SC2", "ASUSROG", "OgamingSC2", "TwitchIN", "freecodecamp", "BeyondTheSummit", "habathcx", "TSM_Dyrus", "esl_brazil"]
+var streamUsers = ["freecodecamp", "ESL_SC2", "ASUSROG", "OgamingSC2", "TwitchIN", "desertbus", "habathcx", "TSM_Dyrus", "esl_brazil"]
 
 // For loop that writes stream info to the page
 for (var i=0; i<streamUsers.length; i++) {
@@ -27,11 +27,11 @@ for (var i=0; i<streamUsers.length; i++) {
 
   // If the user is offline they will appear offline with their logo
   if (status === "null") {
-    $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInRight offline hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><p><span class='status'>Offline</span></p></div>");
+    $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInRight offline hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><div class='game-offline'><p><span class='status'>Offline</span></p></div></div>");
   } else {
       // Display username, logo and stream name
       function writeIt() {
-        $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInLeft online hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><p><i class='fa fa-gamepad fa-2x' aria-hidden='true'></i><br>Playing:<br><span class='status'>" + game + "</span></p></div>");
+        $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInLeft online hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><div class='game'><p>Playing:<br><span class='status'>" + game + "</span></p></div></div>");
   }
     writeIt();
   }
