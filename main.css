@@ -28,7 +28,7 @@ p {
 }
 
 .user-logo {
-  width: 100px;
+  width: 115px;
   border-radius: 50%;
 }
 
@@ -42,7 +42,8 @@ p {
 
 .online,
 .offline {
-  width: 700px;
+  width: ;
+  max-width: 750px;
   border-radius: 500px;
   padding: 15px;
   text-align: center;
@@ -51,7 +52,7 @@ p {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 5px black;
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
 }
 
 .twitch-title {
@@ -127,12 +128,74 @@ p {
 }
 
 .preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .twitch-info {
   display: flex;
   flex-direction: column;
+}
+
+.game,
+.game-offline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.25);
+  width: 115px;
+  height: 115px;
+}
+
+@media (max-width: 800px) {
+  .user-logo {
+    width: 75px;
+  }
+
+  .game,
+  .game-offline {
+    width: 75px;
+    height: 75px;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: .75em;
+  }
+
+  .button-group>button {
+    width: 100%;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+  }
+
+  .online,
+  .offline,
+  .game,
+  .game-offline,
+  .user-logo {
+    border-radius: 10px;
+  }
+
+  .twitch-logo {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 425px) {
+  .online,
+  .offline {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .game,
+  .game-offline {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+  }
 }
