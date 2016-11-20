@@ -6,19 +6,29 @@ body {
   background-color: #6441A4;
 }
 
-h1 {
-  margin: 0 35px;
+h2 {
+  font-size: 2em;
   font-family: 'Press Start 2P', sans-serif;
-  font-size: 60px;
+  margin: 10px;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  margin: 0;
 }
 
 .user-logo {
-  width: 75px;
+  width: 100px;
   border-radius: 50%;
 }
 
@@ -27,13 +37,12 @@ a {
 }
 
 .online {
-  background-color: #7ed666;
+  background-color: #63A46C;
 }
 
 .online,
 .offline {
-  width: 85%;
-  margin: 0 auto;
+  width: 700px;
   border-radius: 500px;
   padding: 15px;
   text-align: center;
@@ -58,12 +67,14 @@ a {
 .twitch-logo {
   width: 300px;
   height: 100px;
+  margin-bottom: 20px;
 }
 
 /* Menu Bar */
 .button-group {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .button-group>button {
@@ -72,7 +83,7 @@ a {
   border-radius: 500px;
   height: 40px;
   width: 200px;
-  margin: 35px 15px;
+  margin: 15px 20px 20px 20px;
   box-shadow: 1px 2px 7px black;
 /*   font-family: 'Hind Madurai', sans-serif; */
   font-weight: bold;
@@ -81,6 +92,47 @@ a {
   cursor: pointer;
 }
 
-$().onClick(function(){
-  $(".online").hide();
-  });
+.hvr-fade {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+  background-color: #F33535;
+  color: white;
+}
+
+.hvr-fade-2 {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+.hvr-fade-2:hover, .hvr-fade-2:focus, .hvr-fade-2:active {
+  background-color: #F33535;
+  color: white;
+}
+
+.status {
+  color: black;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.twitch-info {
+  display: flex;
+  flex-direction: column;
+}

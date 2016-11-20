@@ -27,32 +27,36 @@ for (var i=0; i<streamUsers.length; i++) {
 
   // If the user is offline they will appear offline with their logo
   if (status === "null") {
-    document.write("<a href='" + url + "' target='_blank'><div class='offline'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>Followers: " + followers + "</p><p>Offline</p></div>");
+    $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInRight offline hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><p><span class='status'>Offline</span></p></div>");
   } else {
       // Display username, logo and stream name
       function writeIt() {
-        document.write("<a href='" + url + "' target='_blank'><div class='online'><img src='" + logo + "' alt='User logo' class='user-logo'><h2>" + user + "</h2><p>Followers: " + followers + "</p><p>" + game + "</p></div>");
+        $(".preview").append("<a href='" + url + "' target='_blank'><div class='animated fadeInLeft online hvr-fade-2'><img src='" + logo + "' alt='User logo' class='user-logo'><div class='twitch-info'><h2 class='twitch-user'>" + user + "</h2><p><i class='fa fa-users' aria-hidden='true'></i> Followers: " + followers + "</p></div><p><i class='fa fa-gamepad fa-2x' aria-hidden='true'></i><br>Playing:<br><span class='status'>" + game + "</span></p></div>");
   }
     writeIt();
   }
 }
 
+// Button functionality
 
 $("#showOffline").click(function(){
-  $(".online").show();
-  $(".offline").show();
-
   $(".online").hide();
+  $(".offline").hide();
+
+  $(".offline").show();
 });
 
 $("#showOnline").click(function(){
-  $(".online").show();
-  $(".offline").show();
-
+  $(".online").hide();
   $(".offline").hide();
+
+  $(".online").show();
 });
 
 $("#showAll").click(function(){
+  $(".online").hide();
+  $(".offline").hide();
+
   $(".online").show();
   $(".offline").show();
 });
